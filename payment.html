@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="payment.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Adhyan Club</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./homepage.html">Home</a></li>
+                <li><a href="./homepage.html">About Us</a></li>
+                <li><a href="./studentdashboard.html">Dashboard</a></li>
+                <li><a href="./quizmain.html">Quizzes</a></li>
+                <li><a href="./jobmain.html">Jobs</a></li> 
+                <li><a href="./teach.html">Team Members</a></li> 
+                <li><a href="./buttons2.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <div class="container">
+        <form id="payment-form">
+            <div class="billing-address">
+                <h2>BILLING ADDRESS</h2>
+                <label for="full-name" class="ful-nam">Full Name :</label>
+                <input type="text" id="full-name" name="full-name">
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com">
+                
+                <label for="address">Address :</label>
+                <input type="text" id="address" name="address" placeholder="Room - Street - Locality">
+                
+                <label for="city">City :</label>
+                <input type="text" id="city" name="city" placeholder="Berlin">
+                
+                <label for="state">State :</label>
+                <input type="text" id="state" name="state" placeholder="Germany">
+                
+                <label for="zip-code">Zip Code :</label>
+                <input type="text" id="zip-code" name="zip-code" placeholder="123 456">
+            </div>
+            <div class="payment">
+                <h2>PAYMENT</h2>
+                <div class="cards-accepted">
+                    <h4>Cards Accepted </h4>
+                    <img src="ime.png" alt="PayPal">
+                    <img src="esewa.png" alt="MasterCard">
+                    <img src="visa.jpg" alt="Visa">
+                    <img src="dis.png" alt="Discover">
+                </div>
+                <label for="name-on-card">Name On Card :</label>
+                <input type="text" id="name-on-card" name="name-on-card" placeholder="Mr. Jacob Aiden">
+                
+                <label for="card-number">Credit Card Number :</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1111 2222 3333 4444">
+                
+                <label for="exp-month">Exp. Month :</label>
+                <input type="text" id="exp-month" name="exp-month" placeholder="August">
+                
+                <label for="exp-year">Exp. Year :</label>
+                <input type="text" id="exp-year" name="exp-year" placeholder="2025">
+                
+                <label for="cvv">CVV :</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+            </div>
+          
+        </form>
+        <div class="just-button">
+            <button type="button" onclick="handleSubmit()">Submit</button>
+        </div>
+    </div>
+    <script>
+        function handleSubmit() {
+            const form = document.getElementById('payment-form');
+            const formData = new FormData(form);
+            
+            for (let [name, value] of formData) {
+                console.log(`${name}: ${value}`);
+            }
+            
+
+            alert("It has been submitted");
+        }
+    </script>
+</body>
+</html>

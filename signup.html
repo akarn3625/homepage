@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="signup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Adhyan Club</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./homepage.html">Home</a></li>
+                <li><a href="./homepage.html">About Us</a></li>
+                <li><a href="./studentdashboard.html">Dashboard</a></li>
+                <li><a href="./quizmain.html">Quizzes</a></li>
+                <li><a href="./jobmain.html">Jobs</a></li> 
+                <li><a href="./teach.html">Team Members</a></li> 
+                <li><a href="./buttons2.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="leftcontain">
+            <img src="Capture.PNG">
+        </div>
+        <div class="rightcontain">
+            <h1>Adhyan Club</h1><br>
+            <form class="right" onsubmit="return validateForm()">
+                <label for="usernam">Username</label><br>
+                <input type="text" id="usernam"><br><br>
+                <label for="email">Email address</label><br>
+                <input type="email" id="email"><br><br>
+                <label for="pass">Password</label><br>
+                <input type="password" id="pass"><br><br>
+                <label for="cpass">Confirm password</label><br>
+                <input type="password" id="cpass"><br><br>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("usernam").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("pass").value;
+            var confirmPassword = document.getElementById("cpass").value;
+
+            if (username == "" || email == "" || password == "" || confirmPassword == "") {
+                alert("All fields are mandatory");
+                return false;
+            } else if (password != confirmPassword) {
+                alert("Enter the same password");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

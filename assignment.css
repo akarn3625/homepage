@@ -1,0 +1,238 @@
+header {
+  background-color: #222; 
+  border-bottom: 1px solid #333;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top:0Px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #f9f9f9; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ba2ce2; 
+}
+.leftdash {
+  width: 15%;
+
+  height: 800px;
+  background-color: #fff;
+  left: 0px;
+  
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+  0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+body {
+  background-image: url("Capt.PNG");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  
+}
+.main{display: flex;}
+.profile {
+  margin-left: 29%;
+  margin-top: 4%;
+  width: 45%;
+}
+.nam {
+  font-size: 200%;
+  text-align: center;
+}
+.dasopt {
+  display: flex;
+  margin-left: 4%;
+  padding: 2%;
+}
+.dastext {
+  margin-top: -1%;
+  margin-left: 11%;
+  font-size: 24px;
+}
+.dasicon {
+  margin-top: -2%;
+  height: 32px;
+  width: 32px;
+}
+.dastext a {
+  text-decoration: none;
+  color: black;
+}
+.rightcontain {
+  margin-left: 8%;
+}
+h1 {
+  font-size: 50px;
+}
+.activity {
+  font-size: 25px;
+}
+.wasa {
+  font-size: 20px;
+}
+.fisu {
+  font-size: 25px;
+}
+.upload-box {
+  margin-left: 50%;
+  width: 140%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 20px;
+  text-align: center;
+  display: flex; 
+  flex-direction: column;
+
+  justify-content: center; 
+  align-items: center; 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+  0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.fileshow {
+  width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: #fffafa;
+  border-radius: 20px;
+  font-size: 15px;
+  height: 80px;
+}
+.upload-btn,
+.back-btn {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+.fileshow.dragover {
+  border-color: #6200ea;
+  background: #f0f0f0;
+}
+button:hover{
+  background-color: green;
+}
+
+@media (max-width: 768px) {
+  .leftdash {
+    width: 30%; 
+    padding: 0.5em;
+  }
+
+  .rightcontain {
+    margin-left: 30%;
+    width: calc(100% - 30%); 
+  }
+
+  .profile {
+    width: 100%; 
+  }
+
+  .nam {
+    font-size: 2em; 
+  }
+  .assignment {
+    margin-left: 7%;
+  }
+  .dasicon {
+    height: 1.2em; 
+    width: 1.2em;
+  }
+
+  .upload-box {
+    width: 80%; 
+    margin-left: 0; 
+  }
+  .profile {
+    margin-left: 29%;
+    margin-top: 4%;
+    width: 45%;
+  }
+  .dastext {
+    font-size: 130%;
+  }
+}
+
+@media (max-width: 576px) {
+  .leftdash {
+    width: 100%; 
+    height: auto; 
+    position: static; 
+  }
+
+  .rightcontain {
+    margin-left: 0; 
+    width: 100%; 
+  }
+
+  .profile {
+    width: 100%; 
+  }
+
+  .nam {
+    font-size: 2em; 
+  }
+
+  .dasicon {
+    height: 1em; 
+    width: 1em;
+  }
+
+  .upload-box {
+    width: 100%; 
+    margin-left: 0; 
+  }
+  .profile {
+    margin-left: 29%;
+    margin-top: 4%;
+    width: 45%;
+  }
+  .dastext {
+    font-size: 120%;
+  }
+}
+@media (max-width: 1220px) and (min-width: 769px) {
+  .upload-box {
+    width: 90%;
+    margin-left: 5%; 
+  }
+}

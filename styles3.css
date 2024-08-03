@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Prevents unnecessary scrolling */
+}
+
+
+
+.container {
+    display: flex;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed; /* Keeps sidebar in place */
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile h2 {
+    font-size: 20px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.sidebar .menu ul li a img {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar .menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 250px; /* Aligns main content next to the sidebar */
+    width: calc(100% - 250px); /* Adjust width according to sidebar */
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header .welcome-message h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.header .welcome-message p {
+    font-size: 18px;
+    color: #666;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.student-info, .tasks, .attendance, .class-schedule, .friends-online {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-info .student-graph, .student-info .student-chart {
+    margin-bottom: 20px;
+}
+
+.student-info h2, .tasks h2, .attendance h2, .class-schedule h2, .friends-online h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.student-chart .chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-chart .chart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tasks .task-images img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.class-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.class-schedule th, .class-schedule td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.class-schedule th {
+    background-color: #f4f4f4;
+}
+
+.friends-online .friend {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.friends-online .friend img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

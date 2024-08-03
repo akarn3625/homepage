@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .quiz-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .option {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .option.selected {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+        .submit-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button.disabled {
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Question 3/5</h2>
+        <p style="color: rgb(196, 31, 193);">Who developed Python Programming Language?</p>
+        <div id="options">
+            <div class="option" onclick="checkAnswer(this, 'A')">A. Wick van Rossum</div>
+            <div class="option" onclick="checkAnswer(this, 'B')">B. Rasmus Lerdorf</div>
+            <div class="option" onclick="checkAnswer(this, 'C')">C. Guido van Rossum</div>
+            <div class="option" onclick="checkAnswer(this, 'D')">D. Niene Stom</div>
+        </div>
+        <button id="submit-button" class="submit-button disabled" onclick="submitAnswer()">Next Question</button>
+    </div>
+
+    <script>
+        let selectedAnswer = null;
+
+        function checkAnswer(element, answer) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            selectedAnswer = answer;
+
+            const submitButton = document.getElementById('submit-button');
+            submitButton.classList.remove('disabled');
+        }
+
+        function submitAnswer() {
+            if (!selectedAnswer) return;
+
+            const correctAnswer = 'C';
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                if (option.textContent.startsWith(correctAnswer)) {
+                    option.classList.add('correct');
+                } else if (option.classList.contains('selected')) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            const submitButton = document.getElementById('submit-button');
+            submitButton.classList.add('disabled');
+
+            setTimeout(() => {
+                window.location.href = 'q4.html'; // Change 'next_quiz.html' to the next quiz file
+            }, 2000); // 2 seconds delay before redirecting
+        }
+    </script>
+</body>
+</html>

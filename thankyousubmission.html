@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('./Images/instructor-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            color: #333;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .container h1 {
+            font-size: 48px;
+            background: -webkit-linear-gradient(#a000c3, #f89f00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .container p {
+            font-size: 24px;
+            color: #555;
+        }
+        .top-left-image, .bottom-right-image, .left-image {
+            position: absolute;
+            width: 400px; /* Adjust as needed */
+        }
+        .top-left-image {
+            top: 20px;
+            left: 20px;
+        }
+        .bottom-right-image {
+            bottom: 20px;
+            right: 20px;
+        }
+        .left-image {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background: #a000c3;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .home-button:hover {
+            background: #f89f00;
+        }
+    </style>
+</head>
+<body>
+    <img src="./Images/topleft.png" class="top-left-image" alt="Top Left Image">
+    <img src="./Images/bottomright.png" class="bottom-right-image" alt="Bottom Right Image">
+    <img src="./Images/tonystarkman.png" class="left-image" alt="Left Image">
+    
+    <div class="container">
+        <h1>Thank You!!!</h1>
+        <p>Please check your G-mail .....</p>
+        <a href="./homepage.html" class="home-button">Back to Homepage</a>
+    </div>
+</body>
+</html>

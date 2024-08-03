@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form UI</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="form-container">
+            <h2>Please Send Details?</h2>
+            <form action="path/to/submit/page" method="post"> <!-- Replace with your submission page path -->
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" name="first_name" required>
+                    <input type="text" placeholder="Last Name" name="last_name" required>
+                    <select name="country" required>
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="India">India</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="China">China</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Bhutan">Bhutan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Phone" name="phone" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <select name="city" required>
+                        <option value="" disabled selected>Select City</option>
+                        <option value="kathmandu">Kathmandu</option>
+                        <option value="pokhara">Pokhara</option>
+                        <option value="lalitpur">Lalitpur</option>
+                        <option value="biratnagar">Biratnagar</option>
+                        <option value="birgunj">Birgunj</option>
+                        <option value="dharan">Dharan</option>
+                        <option value="bharatpur">Bharatpur</option>
+                        <option value="janakpur">Janakpur</option>
+                        <option value="dhangadhi">Dhangadhi</option>
+                        <option value="butwal">Butwal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Address" name="address" required>
+                    <input type="text" placeholder="Choose Position" name="position" required>
+                    <input type="date" placeholder="Birth Date" name="birth_date" required>
+                </div>
+                <div class="form-group full-width gender-group">
+                    <label>
+                        <h4>Select your Gender </h4>
+                        <input type="radio" name="gender" value="female" required> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male" required> Male
+                    </label>
+                </div>
+                <div class="form-group full-width">
+                    <textarea placeholder="Additional Information" name="additional_info"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="cv-upload-label" for="cv-upload">Add Your CV</label>
+                    <input type="file" id="cv-upload" name="cv" style="display: none;">
+                    <button type="button" class="browse-button" onclick="document.getElementById('cv-upload').click();">Browse</button>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="back-button" onclick="window.location.href='jobmain.html'">Back</button> <!-- Replace with your back page path -->
+                    <button type="submit" class="submit-button" onclick="window.location.href='thankyousubmission.html'">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assignment.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Adhyan Club</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./homepage.html">Home</a></li>
+                <li><a href="./homepage.html">About Us</a></li>
+                <li><a href="./studentdashboard.html">Dashboard</a></li>
+                <li><a href="./quizmain.html">Quizzes</a></li>
+                <li><a href="./button.html">Courses</a></li>
+                <li><a href="./jobmain.html">Jobs</a></li> 
+                <li><a href="./teach.html">Team Members</a></li> 
+                <li><a href="./buttons2.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="main">
+
+    <div class="leftdash">
+        <img  class="profile"src="profil.PNG"><br>
+        <p class="nam">Ishan Shrestha</P>
+        <div class="dasopt" id="st">
+
+            <img  class="dasicon" src="dashboard.png">
+           <p class="dastext"><a href="./studentdashboard.html">Dashboard</a> </h3>
+        </div>
+        <div class="dasopt" id="nd">
+            <img  class="dasicon" src="courses.png">
+            <p class="dastext"><a href="./button.html">Courses</a></p>
+        </div>
+        <div class="dasopt" id="rd">
+            <img  class="dasicon" src="Quiz.png">
+            <p class="dastext"><a href="./quizmain.html">Quizzes</a></p>
+        </div>
+        <div class="dasopt" id="th">
+            <img  class="dasicon" src="Payment.png">
+            <p class="dastext"><a href="./payment.html">Payment</a></p>
+        </div>
+        
+
+    </div>
+    <div class="rightcontain">
+        <div class="assignment">
+            <h1>Task</h1><br>
+            <p class="activity"><b>Task Activity</b></p>
+            <p class="wasa">Write a short about your task</p>
+            <div class="file-submissions">
+                <p class="fisu"><b>File submissions:</b></p>
+            </div>
+        </div>
+        <div class="upload-box">
+            <p>Maximum file size:100MB, Maximum number of file: 5</p>
+            <div class="fileup">
+                <label for="filesubmiss"><img src="Vector (4).png"></label>
+                <input type="file" id="filesubmiss" style="display:none;visibility: none;">
+            </div>
+            <div class="fileshow" id="drop-area">
+                <p>You can drag and drop files here to add them.</p>
+                <input type="file" id="file-input" multiple style="display:none;" />
+            </div>
+            
+            <div>
+
+                <button class="upload-btn" onclick="submit()">Submit</button>
+                <button class="back-btn"  id="back-btn">Back</button>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+    <script>
+        function submit(){
+            alert("It has been submitted");
+        }
+            
+        
+
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+        const fileSubmiss = document.getElementById('filesubmiss');
+        const backBtn = document.getElementById('back-btn');
+        let filesList = []; // Array to keep track of files
+
+        // Highlight drop area when file is dragged over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.add('dragover');
+            });
+        });
+
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.remove('dragover');
+            });
+        });
+
+        
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const dataTransfer = e.dataTransfer;
+            const files = dataTransfer.files;
+            handleFiles(files);
+        });
+
+        
+        dropArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            handleFiles(files);
+        });
+
+        fileSubmiss.addEventListener('change', (e) => {
+            const files = e.target.files;
+            handleFiles(files);
+        });
+
+        backBtn.addEventListener('click', () => {
+            filesList = [];
+            dropArea.innerHTML = '<p>You can drag and drop files here to add them.</p>';
+        });
+
+        
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (!filesList.some(f => f.name === file.name)) {
+                    filesList.push(file);
+                }
+            });
+
+            dropArea.innerHTML = '';
+            const list = document.createElement('ul'); 
+    
+            filesList.forEach(file => {
+                const listItem = document.createElement('li');
+                listItem.textContent = file.name;
+                list.appendChild(listItem);
+            });
+
+            dropArea.appendChild(list);
+        }
+    </script>
+</body>
+
+</html>
